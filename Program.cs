@@ -12,7 +12,7 @@ namespace KoinLabClient
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             // Update the base address to the API URL
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(uriString: builder.HostEnvironment.BaseAddress) });
 
             await builder.Build().RunAsync();
         }
