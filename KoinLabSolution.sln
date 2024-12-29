@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinLabClient", "KoinLabClient.csproj", "{0923020B-0F61-4226-A0DC-FB211C076C70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoinLabServer", "..\KoinLabServer\KoinLabServer.csproj", "{1D57DA3C-2967-4D94-950A-06889EA62B87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0923020B-0F61-4226-A0DC-FB211C076C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0923020B-0F61-4226-A0DC-FB211C076C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0923020B-0F61-4226-A0DC-FB211C076C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0923020B-0F61-4226-A0DC-FB211C076C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D57DA3C-2967-4D94-950A-06889EA62B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D57DA3C-2967-4D94-950A-06889EA62B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D57DA3C-2967-4D94-950A-06889EA62B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D57DA3C-2967-4D94-950A-06889EA62B87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

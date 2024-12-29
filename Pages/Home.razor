@@ -1,0 +1,46 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<div id="crypto-prices">
+    <h1>Welcome to KoinLab!</h1>
+    <p>Future home of the world's ultimate crypto-currency!!! For now it's API practice 😜</p>
+    @if (prices != null)
+    {
+        <h1><i class="fa-brands fa-bitcoin"></i> Bitcoin: $@(prices.ContainsKey("bitcoin") ? prices["bitcoin"]["usd"].ToString() : "N/A")</h1>
+        <h1><i class="fa-brands fa-ethereum"></i> Ethereum: $@(prices.ContainsKey("ethereum") ? string.Format("{0:0}", prices["ethereum"]["usd"]) : "N/A")</h1>
+    }
+    else if (errorMessage != null)
+    {
+        <p class="text-danger">@errorMessage</p>
+    }
+    else
+    {
+        <p>Loading prices...</p>
+    }
+</div>
+
+<footer>
+    <ul>
+        <li><a href="https://linkedin.com/in/V3ND3TTi" target="_blank"><i class="fa-brands fa-linkedin fa-3x"></i></a></li>
+        <li><a href="https://github.com/V3ND3TTi" target="_blank"><i class="fa-brands fa-github fa-3x"></i></a></li>
+        <li><a href="https://twitter.com/V3ND3TTi" target="_blank"><i class="fa-brands fa-x-twitter fa-3x"></i></a></li>
+    </ul>
+</footer>
+
+@code {
+    private Dictionary<string, Dictionary<string, decimal>>? prices;
+    private string? errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            prices = await Http.GetFromJsonAsync<Dictionary<string, Dictionary<string, decimal>>>("https://localhost:5001/api/crypto/prices");
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error fetching prices: {ex.Message}";
+            Console.WriteLine($"Error fetching prices: {ex}");
+        }
+    }
+}
