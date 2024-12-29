@@ -35,7 +35,7 @@
     {
         try
         {
-            prices = await Http.GetFromJsonAsync<Dictionary<string, Dictionary<string, decimal>>>("https://localhost:5001/api/crypto/prices");
+            prices = await Http.GetFromJsonAsync<Dictionary<string, Dictionary<string, decimal>>>("api/crypto/prices");
         }
         catch (Exception ex)
         {
